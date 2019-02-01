@@ -1,27 +1,27 @@
 package bootapp;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationListener;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.context.event.ContextStartedEvent;
+import org.springframework.stereotype.Component;
 
 /**
- * 簡単な Spring Boot サンプルアプリケーションの起動/構成クラス.
- * <p>このサンプルアプリはこのコントローラと以下のものしか作成しない.</p>
- * <p>ステップ1: SPRING INITIALIZR で作成した build.gradle</p>
+ * アプリケーション起動クラス.
+ * <p>
+ * Spring boot 雛形アプリケーションの起動クラス.</p>
  */
-@Controller
-@EnableAutoConfiguration
+@SpringBootApplication
+// @Configuration, @EnableAutoConfiguration, @ComponentScan を一緒に使用するのと同等。
+
+@ComponentScan("bootapp")
+// 指定したパッケージ以下（サブパッケージも含めて）をスキャンするように指示。
+// コンポーネントが見つかれば、インスタンスを生成して、Spring DI コンテナに登録。
 public class App {
 
-    @RequestMapping("/")
-    @ResponseBody
-    String home() {
-        return "Hello World!";
-    }
-
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(App.class, args);
+    public static void main(String[] args) {
+        SpringApplication.run(App.class);
     }
 }
