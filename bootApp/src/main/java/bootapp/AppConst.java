@@ -28,6 +28,8 @@ public class AppConst {
     public static final String VIEW_USER_LIST = "views/user_list";
     /** エラービュー名 */    
     public static final String VIEW_ERROR = "error";
+    /** 結果ビュー名 */
+    public static final String VIEW_KEKKA = "views/kekka";
     
     /** カレントの連絡先種別(String)を登録する属性名 */
     public static final String ATTR_CUR_SYUBETU = "curSyubetu"; 
@@ -37,4 +39,6 @@ public class AppConst {
     public static final String ATTR_USER_LIST = "userList";
     /** ログインユーザー(User)を登録する属性名 */
     public static final String ATTR_LOGIN_USER = "loginUser";
+    /** 結果を登録する属性名 */
+    public static final String ATTR_KEKKA_LIST = "kekkaList";
 }

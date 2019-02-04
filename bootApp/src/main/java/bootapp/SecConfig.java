@@ -30,7 +30,8 @@ public class SecConfig extends WebSecurityConfigurerAdapter {
             // ADMIN ロールのみがアクセスできる URL
             .antMatchers(URL_ADMIN + "/**").hasRole("ADMIN")
             .antMatchers(URL_USER_LIST + "/**").hasRole("ADMIN")
-            .anyRequest().authenticated()
+            // bootJutyu では全ページアクセスできるように以下をコメント文とする.
+            //.anyRequest().authenticated() 
             .and().formLogin()
             .loginPage(URL_LOGIN).defaultSuccessUrl(URL_HOME).permitAll()
             .and().logout().permitAll();
