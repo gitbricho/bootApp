@@ -1,11 +1,6 @@
 package bootapp.controller;
 
-import static bootapp.AppConst.URL_HOME;
-import static bootapp.AppConst.URL_LOGIN;
-import static bootapp.AppConst.URL_ROOT;
-import static bootapp.AppConst.VIEW_HOME;
-import static bootapp.AppConst.VIEW_LOGIN;
-
+import static bootapp.AppConst.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -14,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import bootapp.AppData;
 
+// MARK: クラス
 /**
  * ホームコントローラ.
  * <p>アプリケーションのホームビュー、ログインビューの表示を行う.
@@ -22,7 +18,9 @@ import bootapp.AppData;
 @Scope("session")
 public class HomeController {
 
-	/**
+	
+    // MARK: マップメソッド
+    /**
      * サンプルアプリのホームページを表示.
      * <p>ページを表示する前にテスト用のデータを作成する.</p>
      * <p>リクエストのマッピングの注釈.
@@ -34,7 +32,8 @@ public class HomeController {
      * @param model org.springframework.ui.Model インスタンス.
      * @return ビュー名
      */
-    @GetMapping({ URL_ROOT, URL_HOME })
+    // @RequestMapping(value = { "/", "/home" }, method = RequestMethod.GET) //ver4.2
+    @GetMapping({ URL_ROOT, URL_HOME }) // ver 4.3
     public String home(Model model) {
         return VIEW_HOME;
     }

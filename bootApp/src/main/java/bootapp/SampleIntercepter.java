@@ -19,7 +19,7 @@ public class SampleIntercepter extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, 
     		HttpServletResponse httpServletResponse, Object o) throws Exception {
-        log.info(">>>>> サンプルインターセプター::preHandle");
+        log.info(">>>>> サンプルインターセプター");
         return true;
     }
 
@@ -27,13 +27,13 @@ public class SampleIntercepter extends HandlerInterceptorAdapter {
     public void postHandle(HttpServletRequest httpServletRequest, 
     		HttpServletResponse httpServletResponse, Object o, 
     		ModelAndView modelAndView) throws Exception {
-        log.info(">>>>> サンプルインターセプター::postHandle");
+        //log.info(">>>>> サンプルインターセプター");
     }
 
     @Override
     public void afterCompletion(HttpServletRequest httpServletRequest, 
     		HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception {
-        log.info(">>>>> サンプルインターセプター::afterCompletion");
+        //log.info(">>>>> サンプルインターセプター");
     }
 
 }

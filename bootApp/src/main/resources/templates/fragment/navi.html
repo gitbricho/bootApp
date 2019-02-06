@@ -20,10 +20,11 @@
         <ul class="nav navbar-nav navbar-left">
           <!-- menu2 SSS -->
           <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              連絡先 <b class="caret"></b>
+              ドロップダウン <b class="caret"></b>
           </a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="#" th:href="@{/contact/list}">連絡先一覧</a></li>
+              <li><a href="#">メニュー1</a></li>
+              <li><a href="#">メニュー2</a></li>
             </ul></li>
           <!-- menu2 EEE -->
           <!-- menu2 SSS -->
@@ -31,20 +32,9 @@
               ユーザー管理 <b class="caret"></b>
           </a>
             <ul class="dropdown-menu" role="menu">
-              <li><a href="#" th:href="@{/user_list}">ユーザー一覧</a></li>
+              <li><a href="#" th:href="@{/users}">ユーザー一覧</a></li>
             </ul></li>
           <!-- menu2 EEE -->
-          <!-- menu3 SSS -->
-          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              テーマ変更 <b class="caret"></b>
-          </a>
-            <ul class="dropdown-menu" role="menu">
-              <li><a href="#" th:href="@{/contact/theme/_slate}">slate</a></li>
-              <li><a href="#" th:href="@{/contact/theme/_paper}">paper</a></li>
-              <li><a href="#" th:href="@{/contact/theme/_flatly}">flatly</a></li>
-              <li><a href="#" th:href="@{/contact/theme/_default}">default</a></li>
-            </ul></li>
-          <!-- menu3 EEE -->
         </ul>
         <form th:action="@{/logout}" method="post" class="navbar-form navbar-right">
           <button type="submit" class="btn btn-default">ログアウト</button>

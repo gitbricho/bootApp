@@ -21,8 +21,8 @@ public class ContextRefreshedListener implements ApplicationListener<ContextRefr
 	
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
-        System.err.println("アプリ実行前にログインに必要なユーザーを登録する.");
-        data.createUsers();
+        System.err.println("アプリ実行前にログインに必要なユーザーと連絡先データを登録する.");
+        data.create();
     }
 	
 }

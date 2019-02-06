@@ -15,6 +15,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.EclipseLinkJpaDialect;
 import org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter;
 
+//MARK: クラス
 /**
  * データベース設定. 
  * <p>注釈によるトランザクション管理を有効にする。
@@ -111,8 +112,8 @@ public class DbConfig {
     }
 
     /**
-     * EclipseLink JPA ダイアレクト (eclipseLinkJpaDialect) の作成.
-     * <p>このビーンを使って、EclipseLink 固有のトランザクション管理を使用できる。</p>
+     * エクリプス JPA ダイアレクト (eclipseLinkJpaDialect) の作成.
+     * <p>このビーンを使って、エクリプス固有のトランザクション管理を使用できる。</p>
      * 
      * @return EclipseLink JPAダイアレクト
      */

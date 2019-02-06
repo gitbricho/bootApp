@@ -49,7 +49,7 @@ public class UserServiceImpl implements UserService {
                 log.debug("loginUser %%%%%%%%% " + loginUser.toString());
                 org.springframework.security.core.userdetails.User user 
                     = new org.springframework.security.core.userdetails.User(
-                        loginUser.getName(), loginUser.getPass(), true, true, true,
+                        loginUser.getName(), loginUser.getEncodePass(), true, true, true,
                         true, getGrantedAuthorities(getRoles(loginUser.getRoles())));
                 log.debug("httpSession=" + httpSession);
                 httpSession.setAttribute(ATTR_LOGIN_USER, loginUser);

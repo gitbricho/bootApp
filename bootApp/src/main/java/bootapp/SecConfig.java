@@ -1,20 +1,21 @@
 package bootapp;
 
-import static bootapp.AppConst.*;
+import static bootapp.AppConst.URL_ADMIN;
+import static bootapp.AppConst.URL_HOME;
+import static bootapp.AppConst.URL_LOGIN;
+import static bootapp.AppConst.URL_ROOT;
+import static bootapp.AppConst.URL_USER_LIST;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import bootapp.service.UserService;
 
-/**
- * セキュリティ設定.
- */
+//MARK: クラス
 @Configuration
 public class SecConfig extends WebSecurityConfigurerAdapter {
 
@@ -24,10 +25,8 @@ public class SecConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-        	// 誰でもアクセス可能な URL の設定
             .antMatchers(URL_ROOT, URL_HOME).permitAll()
             .antMatchers("/css/**", "js/**", "/os/**").permitAll()
-            // ADMIN ロールのみがアクセスできる URL
             .antMatchers(URL_ADMIN + "/**").hasRole("ADMIN")
             .antMatchers(URL_USER_LIST + "/**").hasRole("ADMIN")
             .anyRequest().authenticated()
@@ -39,7 +38,6 @@ public class SecConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-    	// ログインユーザーの取得に使用するサービスを設定.
         auth.userDetailsService(userService)
                 .passwordEncoder(new BCryptPasswordEncoder());
     }

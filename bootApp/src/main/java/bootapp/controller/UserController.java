@@ -1,7 +1,6 @@
 package bootapp.controller;
 
 import static bootapp.AppConst.*;
-
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -14,9 +13,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import bootapp.model.User;
 import bootapp.repo.UserRepository;
 
+// MARK: クラス
 /**
  * ユーザーコントローラ.
- * <p></p>
  */
 @Controller
 public class UserController {
@@ -25,7 +24,8 @@ public class UserController {
 
     @Autowired
     UserRepository userRepo;
-
+    
+    // MARK: マップメソッド
     /**
      * ユーザー一覧の表示.
      */
