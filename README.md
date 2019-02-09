@@ -1,5 +1,5 @@
 # bootApp
 spring boot デモアプリケーション.
 
-## ブランチ: 
+## ブランチ:master
 最小限の Spring Boot プロジェクト.
