@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- 共通部 ＋ テーマ別の bootstrap.min.css を持つヘッダ -->
+<head>
+<title>連絡先管理 - 受注テスト：結果</title>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="stylesheet" href="/os/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/css/app_base.css" />
+<script src="/os/js/jquery.min.js"></script>
+<script src="/os/js/bootstrap.min.js"></script>
+<meta charset="utf-8" />
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+
+        <div><div>
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+   <div class="navbar-header">
+    <a class="navbar-brand" href="/"> 
+     <span>連絡先管理</span></a>
+   </div>
+   <!-- menu -->
+   <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav navbar-left">
+     <!-- menu2 SSS -->
+     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> 受注管理
+       <b class="caret"></b>
+     </a>
+      <ul class="dropdown-menu" role="menu">
+       <li><a href="/jutyu_list">受注一覧</a></li>
+       <li><hr/></li>
+       <li><a href="/jutyu/meisai/301">明細取得(id=301)</a></li>
+       <li><a href="/jutyu/syohin/100/5">商品取得(単価:100,数量:5)</a></li>
+       <li><a href="/kokyaku?id=10&amp;name=納品先01">顧客取得(id=10,name=納品先01)</a></li>
+       <li><a href="/kokyaku/20">顧客取得(id=20)</a></li>
+       <li><a href="/kokyaku/search/email:k03@xxx.com">顧客検索(email=k03@xxx.com)</a></li>
+       <li><a href="/kokyaku/search/name:納品先01">顧客検索(name=納品先01)</a></li>
+       <li><a href="/kokyaku/search/emailLike:xxx.com">顧客検索(emailLike=xxx.com)</a></li>
+       <li><a href="/kokyaku/search/nameLike:納品先">顧客検索(nameLike=納品先)</a></li>
+      </ul></li>
+     <!-- menu2 EEE -->
+     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"> 顧客REST
+       <b class="caret"></b>
+     </a>
+      <ul class="dropdown-menu" role="menu">
+       <li><a href="/customer">GET /customer</a></li>
+       <li><a href="/customer/10">GET /customer/10</a></li>
+       <li><a href="/customer/20">GET /customer/20</a></li>
+       <li><a href="/customer?size=1">GET /customer?size=1</a></li>
+       <li><a href="/customer?page=1&amp;size=1">GET /customer?page=1&size=1</a></li>
+       <li><a href="/customer?sort=email,desc">GET /customer?sort=email,desc</a></li>
+      </ul></li>
+    </ul>
+   </div>
+  </nav>
+ </div></div>
+
+        <br />
+        <header>
+          <h3></h3>
+        </header>
+
+        <section>
+  
+  　<!-- kekka コンテンツ -->
+    <table class="table table-bordered table-striped">
+      <tbody>
+        <tr>
+          <td>リクエスト: /jutyu/meisai/{meisaiId}</td>
+        </tr>
+        <tr>
+          <td>meisaiId = 301</td>
+        </tr>
+        <tr>
+          <td>取得した明細：bootapp.model.Meisai(id:301, version:1, syohin:商品001, tanka:100, suryo:5, jutyu:bootapp.model.Jutyu(id:300, version:1, jutyuBi:2015/09/02, nohinSaki:納品先03XXX-YYY-ZZ, jutyuGaku:3500))</td>
+        </tr>
+      </tbody>
+    </table>
+  　<!-- kekka コンテンツ -->
+  
+  </section>
+
+        <footer>
+          <hr/>
+          <p>
+            &copy; <span>連絡先管理 2019</span>
+          </p>
+        </footer>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
